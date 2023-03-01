@@ -24,6 +24,8 @@ export interface Order {
 
 export type Orders = Order[];
 
+export type UserLogin = Pick<User, "email" | "isLogged" | "token">;
+
 export interface User {
   email: string;
   token: string;

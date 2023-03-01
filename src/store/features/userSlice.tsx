@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { User } from "../../types/types";
+import { User, UserLogin } from "../../types/types";
 
-const initialUserState: User = {
+export const initialUserState: User = {
   email: "",
   isLogged: false,
   token: "",
@@ -10,21 +10,28 @@ const initialUserState: User = {
   shoppingCart: [],
 };
 
-const userSlice = createSlice({
+const loginUserSlice = createSlice({
   name: "user",
   initialState: initialUserState,
   reducers: {
     loginUser: (
       currentUserStatus: User,
-      action: PayloadAction<User>
+      action: PayloadAction<UserLogin>
     ): User => ({
+      ...currentUserStatus,
       ...action.payload,
-      token: action.payload.token,
       isLogged: true,
+    }),
+
+    logoutUser: (currentUserStatus: User): User => ({
+      ...initialUserState,
     }),
   },
 });
 
-export const { loginUser: loginUserActionCreator } = userSlice.actions;
+export const {
+  loginUser: loginUserActionCreator,
+  logoutUser: logoutUserActionCreator,
+} = loginUserSlice.actions;
 
-export const userReducer = userSlice.reducer;
+export const loginUserReducer = loginUserSlice.reducer;
