@@ -10,7 +10,7 @@ export const initialUserState: User = {
   shoppingCart: [],
 };
 
-const loginUserSlice = createSlice({
+const userSlice = createSlice({
   name: "user",
   initialState: initialUserState,
   reducers: {
@@ -32,6 +32,6 @@ const loginUserSlice = createSlice({
 export const {
   loginUser: loginUserActionCreator,
   logoutUser: logoutUserActionCreator,
-} = loginUserSlice.actions;
+} = userSlice.actions;
 
-export const loginUserReducer = loginUserSlice.reducer;
+export const userReducer = userSlice.reducer;
