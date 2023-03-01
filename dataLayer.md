@@ -8,12 +8,13 @@
 - isLogged
 - deliveryAddress
 - shoppingCart
-- pastOrders
+- orders
 
 ## Sculptures
 
 - id
 - name
+- image
 - price
 - artist
 - productionYear
@@ -37,7 +38,7 @@
 - Add deliveryAddress
 - Add item to shopping Cart
 - Remove item from shopping Cart
-- Add an order to User's pastOrders
+- Add an order to User's orders
 
 ## Sculptures
 
