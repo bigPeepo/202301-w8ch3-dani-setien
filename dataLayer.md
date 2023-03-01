@@ -16,6 +16,7 @@
 - name
 - image
 - price
+- currency
 - artist
 - productionYear
 - isAvailable

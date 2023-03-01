@@ -25,7 +25,8 @@ export interface Order {
 export type Orders = Order[];
 
 export interface User {
-  username: string;
+  email: string;
+  token: string;
   isLogged: boolean;
   deliveryAddress: string;
   shoppingCart: Sculptures;
